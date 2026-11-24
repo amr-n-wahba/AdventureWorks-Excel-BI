@@ -1,0 +1,12 @@
+# Excel temp / lock files
+~$*.xls*
+*.tmp
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Never publish raw sources or private working files
+Sources/
+Private_Reference_Archive/
