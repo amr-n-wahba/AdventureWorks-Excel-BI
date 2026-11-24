@@ -11,7 +11,7 @@ Power Query · Data Model · DAX · PivotTables · Slicers · VBA
 ![VBA](https://img.shields.io/badge/VBA-Animation-0B7285?style=flat)
 ![Dashboards](https://img.shields.io/badge/Dashboards-7%20pages%20%C3%97%202%20themes-45E3EB?style=flat&labelColor=0B0F1E)
 
-<img src="Screenshots/Dark/Overview_Dark.png" alt="Overview dashboard (dark mode)" width="100%">
+<img src="Overview_Dark.png" alt="Overview dashboard (dark mode)" width="100%">
 
 </div>
 
@@ -54,37 +54,37 @@ A business user can open one workbook, filter by **year, month, category and reg
 ### 1 · Overview
 Headline KPIs (Revenue, Gross Profit, Gross Margin, Orders, Customers, Return Rate), monthly revenue vs. profit, revenue mix by category, and gross profit by region.
 
-![Overview](Screenshots/Dark/Overview_Dark.png)
+![Overview](Overview_Dark.png)
 
 ### 2 · Sales
 Revenue trend, month-over-month and year-over-year growth, monthly revenue by category and the top sub-categories.
 
-![Sales](Screenshots/Dark/Sales_Dark.png)
+![Sales](Sales_Dark.png)
 
 ### 3 · Profitability
 Revenue → product cost → gross profit bridge, profit by category, margin by region and the lowest-profit products.
 
-![Profitability](Screenshots/Dark/Profitability_Dark.png)
+![Profitability](Profitability_Dark.png)
 
 ### 4 · Products
 Top products by gross profit, sub-category revenue concentration (Pareto), lowest-profit products, and a revenue-vs-margin scatter.
 
-![Products](Screenshots/Dark/Products_Dark.png)
+![Products](Products_Dark.png)
 
 ### 5 · Customers
 Repeat rate, orders per buyer, revenue per buyer, top customers, and revenue / repeat rate by occupation.
 
-![Customers](Screenshots/Dark/Customers_Dark.png)
+![Customers](Customers_Dark.png)
 
 ### 6 · Returns
 Returned units over time, returns by category, most-returned products and period return rate by category.
 
-![Returns](Screenshots/Dark/Returns_Dark.png)
+![Returns](Returns_Dark.png)
 
 ### 7 · Regions
 Revenue by country (map), orders by region, gross margin by region and purchasing customers by region.
 
-![Regions](Screenshots/Dark/Regions_Dark.png)
+![Regions](Regions_Dark.png)
 
 <details>
 <summary><b>☀️ Light-mode gallery (click to expand)</b></summary>
@@ -93,13 +93,13 @@ Revenue by country (map), orders by region, gross margin by region and purchasin
 
 | Overview | Sales |
 |:--:|:--:|
-| <img src="Screenshots/Light/Overview_Light.png" width="100%"> | <img src="Screenshots/Light/Sales_Light.png" width="100%"> |
+| <img src="Overview_Light.png" width="100%"> | <img src="Sales_Light.png" width="100%"> |
 | **Profitability** | **Products** |
-| <img src="Screenshots/Light/Profitability_Light.png" width="100%"> | <img src="Screenshots/Light/Products_Light.png" width="100%"> |
+| <img src="Profitability_Light.png" width="100%"> | <img src="Products_Light.png" width="100%"> |
 | **Customers** | **Returns** |
-| <img src="Screenshots/Light/Customers_Light.png" width="100%"> | <img src="Screenshots/Light/Returns_Light.png" width="100%"> |
+| <img src="Customers_Light.png" width="100%"> | <img src="Returns_Light.png" width="100%"> |
 | **Regions** | |
-| <img src="Screenshots/Light/Regions_Light.png" width="100%"> | |
+| <img src="Regions_Light.png" width="100%"> | |
 
 </details>
 
@@ -107,7 +107,7 @@ Revenue by country (map), orders by region, gross margin by region and purchasin
 
 A star schema: two fact tables (`FactSales`, `FactReturns`) share conformed dimensions (`DimCalendar`, `DimProducts`, `DimTerritories`; `DimCustomers` filters sales).
 
-<img src="Documentation/Data_Model.png" alt="Data Model diagram" width="100%">
+<img src="Data_Model.png" alt="Data Model diagram" width="100%">
 
 | Table | Type | Grain / purpose |
 |---|---|---|
@@ -118,7 +118,7 @@ A star schema: two fact tables (`FactSales`, `FactReturns`) share conformed dime
 | `DimCustomers` | Dimension | Customer attributes (occupation, income, education …) |
 | `DimTerritories` | Dimension | Region, country, continent |
 
-More detail: [`Documentation/Project_Overview.md`](Documentation/Project_Overview.md)
+More detail: [`Project_Overview.md`](Project_Overview.md)
 
 ## 🛠️ Technical Stack
 
@@ -145,13 +145,13 @@ More detail: [`Documentation/Project_Overview.md`](Documentation/Project_Overvie
 
 **Requirements:** Microsoft Excel for **Windows** (Microsoft 365 or 2019+) — the Data Model, slicers, macros and the filled-map chart are not fully supported in Excel for Mac or Excel Online / LibreOffice.
 
-1. Download [`Workbook/AdventureWorks_Excel_BI_Dashboard.xlsm`](Workbook/AdventureWorks_Excel_BI_Dashboard.xlsm).
+1. Download [`AdventureWorks_Excel_BI_Dashboard.xlsm`](AdventureWorks_Excel_BI_Dashboard.xlsm).
 2. Right-click the file → **Properties → Unblock** (if present), then open it.
 3. Click **Enable Content / Enable Macros** to turn on the KPI animation. The report works without macros — only the animation is disabled.
 4. Use the **Year** slicer first, then **Month**, then Category / Region. Clear a slicer with the funnel icon in its top-right corner.
 5. Use the sidebar to move between pages, and 🌙 / ☀️ to switch theme.
 
-> ⚠️ **Do not click *Refresh All* unless you have pointed the workbook at your own CSV folder.** The data is already stored inside the Data Model, so the report opens and filters normally. Refreshing needs the original source CSVs — see *Refreshing the data* in [`Documentation/Dashboard_Guide.md`](Documentation/Dashboard_Guide.md).
+> ⚠️ **Do not click *Refresh All* unless you have pointed the workbook at your own CSV folder.** The data is already stored inside the Data Model, so the report opens and filters normally. Refreshing needs the original source CSVs — see *Refreshing the data* in [`Dashboard_Guide.md`](Dashboard_Guide.md).
 
 ## 💡 Business Insights
 
@@ -183,15 +183,11 @@ The full prioritised list, with proposed actions and limitations, lives on the `
 AdventureWorks-Excel-BI/
 ├── README.md
 ├── LICENSE
-├── Workbook/
-│   └── AdventureWorks_Excel_BI_Dashboard.xlsm      # the full project
-├── Screenshots/
-│   ├── Dark/    Overview · Sales · Profitability · Products · Customers · Returns · Regions
-│   └── Light/   Overview · Sales · Profitability · Products · Customers · Returns · Regions
-└── Documentation/
-    ├── Data_Model.png
-    ├── Project_Overview.md
-    └── Dashboard_Guide.md
+├── AdventureWorks_Excel_BI_Dashboard.xlsm     # the full project workbook
+├── Project_Overview.md · Dashboard_Guide.md   # documentation
+├── Data_Model.png                             # data model diagram
+├── *_Dark.png                                 # 7 dark-mode dashboard screenshots
+└── *_Light.png                                # 7 light-mode dashboard screenshots
 ```
 
 ## 📜 Data & License

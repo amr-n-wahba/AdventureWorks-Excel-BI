@@ -80,4 +80,4 @@ Macros are intentionally small and cosmetic — **no macro is required for any c
 
 ## 9. Known limitations
 
-See the *Limitations & Data Notes* section of the [README](../README.md#%EF%B8%8F-limitations--data-notes).
+See the *Limitations & Data Notes* section of the [README](README.md#%EF%B8%8F-limitations--data-notes).
